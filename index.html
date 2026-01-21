@@ -271,6 +271,32 @@ body {
             to { opacity: 1; transform: translateY(0); }
         }
         .animate-content { animation: fadeIn 1s ease forwards; }
+
+        /* Marquee Animations for Logo Parallax */
+        @keyframes marquee-right-to-left {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        @keyframes marquee-left-to-right {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        .animate-marquee-right-to-left {
+            animation: marquee-right-to-left 20s linear infinite;
+        }
+        .animate-marquee-left-to-right {
+            animation: marquee-left-to-right 20s linear infinite;
+        }
+
+        /* Parallax Gallery Styles */
+        .parallax-item {
+            transition: transform 0.3s ease;
+        }
+        .parallax-image {
+            transition: transform 0.3s ease;
+        }
+
+
     </style>
 </head>
 <body>
@@ -287,11 +313,13 @@ body {
                 </div>
                 
                 
-                <div class="hidden lg:flex items-center space-x-12 text-white" id="navLinks">
+                <div class="hidden lg:flex items-center space-x-10 text-white" id="navLinks">
                     <a href="#home" class="nav-link">Home</a>
                     <a href="#why-us" class="nav-link">Advantages</a>
+                   <a href="#team" class="nav-link">Our Team</a>
                     <a href="#services" class="nav-link">Services </a>
                     <a href="#industries" class="nav-link">Industries</a>
+                    <a href="#gallery" class="nav-link">Projects </a>
                     <a href="#process" class="nav-link">Methodology</a>
                     <a href="#get-started" class="bg-white text-[#2a0f2a] px-8 py-3 rounded-full font-bold shadow-2xl hover:scale-105 transition-all">Consult Our Experts</a>
                 </div>
@@ -304,7 +332,11 @@ body {
         <div id="mobileMenu" class="hidden absolute top-full left-0 w-full bg-[#2a0f2a] p-8 text-white space-y-6 shadow-2xl border-t border-white/5">
             <a href="#home" class="block text-lg" onclick="toggleMobileMenu()">Home</a>
             <a href="#why-us" class="block text-lg" onclick="toggleMobileMenu()">Advantages</a>
+             <a href="team" class="block text-lg" onclick="toggleMobileMenu()">Our Team</a>
             <a href="#services" class="block text-lg" onclick="toggleMobileMenu()">Solutions</a>
+            <a href="#industries" class="block text-lg" onclick="toggleMobileMenu()">Industries</a>
+            <a href="#gallery" class="block text-lg" onclick="toggleMobileMenu()">Projects </a>
+            <a href="#process" class="block text-lg" onclick="toggleMobileMenu()">Methodology</a>
             <a href="#get-started" class="block font-bold text-accent text-lg" onclick="toggleMobileMenu()">Free Strategy Session</a>
         </div>
     </nav>
@@ -336,7 +368,7 @@ body {
                     Move beyond the limitations of manual execution. PowerEdge System transforms stagnant business operations into dynamic, self-optimizing ecosystems through sophisticated automation.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-6">
-                    <a href="#get-started" class="hero-cta px-12 py-5 bg-white text-[#2a0f2a] rounded-2xl font-extrabold text-center text-lg">
+                    <a href="#get-started" class="hero px-12 py-5 bg-white text-[#2a0f2a] rounded-2xl font-extrabold text-center text-lg">
                         Modernize My Business
                     </a>
                     <div class="flex items-center gap-5 px-4">
@@ -356,7 +388,7 @@ body {
             <div class="relative hidden lg:block" data-aos="fade-left" data-aos-delay="400">
 
                 <!-- Product Efficiency Stats Overlay -->
-                <div class="absolute -top-6 -left-12 stat-card p-8 rounded-3xl shadow-2xl border border-gray-100" data-aos="fade-up" data-aos-delay="800">
+                <div class="absolute -top-13 left-1/3 transform -translate-x-1/2 stat-card p-8 rounded-3xl shadow-2xl border border-gray-100 cursor-pointer" data-aos="fade-up" data-aos-delay="900" >
                     <div class="flex items-center gap-4 mb-4">
                         <div class="w-10 h-10 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center">
                             <i class="fas fa-cogs"></i>
@@ -368,7 +400,7 @@ body {
                 </div>
 
                 <!-- Precision Stats Overlay -->
-                <div class="absolute -top-6 left-1/3 transform -translate-x-1/2 stat-card p-8 rounded-3xl shadow-2xl border border-gray-100" data-aos="fade-up" data-aos-delay="1000">
+                <div class="absolute bottom-12 -left-12 stat-card p-8 rounded-3xl shadow-2xl border border-gray-100 cursor-pointer" data-aos="fade-up" data-aos-delay="1000" >
                     <div class="flex items-center gap-4 mb-4">
                         <div class="w-10 h-10 bg-green-100 text-green-600 rounded-full flex items-center justify-center">
                             <i class="fas fa-chart-line"></i>
@@ -380,7 +412,7 @@ body {
                 </div>
 
                 <!-- Cost Saving Stats Overlay -->
-                <div class="absolute -top-6 -right-12 stat-card p-8 rounded-3xl shadow-2xl border border-gray-100" data-aos="fade-up" data-aos-delay="1200">
+                <div class="absolute bottom-12 -right-12 stat-card p-8 rounded-3xl shadow-2xl border border-gray-100 cursor-pointer" data-aos="fade-up" data-aos-delay="1200">
                     <div class="flex items-center gap-4 mb-4">
                         <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
                             <i class="fas fa-dollar-sign"></i>
@@ -431,7 +463,87 @@ body {
         </div>
     </section>
 
+ <section id="team" class="py-32 px-6 bg-white relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-purple-50 rounded-full blur-3xl opacity-50 -mr-48 -mt-48"></div>
     
+    <div class="max-w-7xl mx-auto relative z-10">
+        <div class="text-center mb-20" data-aos="fade-up">
+            <h2 class="text-accent font-black uppercase tracking-[0.3em] text-xs mb-6">The Experts</h2>
+            <h3 class="text-5xl font-extrabold text-[#2a0f2a] mb-6">Architects of Efficiency</h3>
+            <p class="text-gray-500 max-w-2xl mx-auto text-lg">Our dedicated team of automation engineers and AI specialists based in India, delivering global solutions.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-20">
+            
+            <div class="group text-center" data-aos="fade-up">
+                <div class="relative mb-6 inline-block">
+                    <div class="absolute inset-0 bg-accent rounded-2xl rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
+                    <div class="absolute -top-3 -right-3 bg-white p-3 rounded-xl shadow-lg z-20">
+                        <i class="fas fa-robot text-accent text-xl"></i>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&h=500&q=80" alt="Arjun Mehta" class="relative w-64 h-80 object-cover rounded-2xl shadow-xl border-2 border-white grayscale group-hover:grayscale-0 transition-all duration-500">
+                </div>
+                <h4 class="text-2xl font-bold text-[#2a0f2a]">Arjun Mehta</h4>
+                <p class="text-accent font-medium text-sm uppercase tracking-wider">Chief Automation Officer</p>
+            </div>
+
+            <div class="group text-center" data-aos="fade-up">
+                <div class="relative mb-6 inline-block">
+                    <div class="absolute inset-0 bg-[#2a0f2a] rounded-2xl -rotate-3 group-hover:-rotate-6 transition-transform duration-300"></div>
+                    <div class="absolute -top-3 -right-3 bg-white p-3 rounded-xl shadow-lg z-20">
+                        <i class="fas fa-cog fa-spin text-[#2a0f2a] text-xl"></i>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&h=500&q=80" alt="Priya Sharma" class="relative w-64 h-80 object-cover rounded-2xl shadow-xl border-2 border-white grayscale group-hover:grayscale-0 transition-all duration-500">
+                </div>
+                <h4 class="text-2xl font-bold text-[#2a0f2a]">Priya Sharma</h4>
+                <p class="text-accent font-medium text-sm uppercase tracking-wider">Lead AI Engineer</p>
+            </div>
+
+            <div class="group text-center" data-aos="fade-up">
+                <div class="relative mb-6 inline-block">
+                    <div class="absolute inset-0 bg-accent rounded-2xl rotate-3 group-hover:rotate-6 transition-transform duration-300"></div>
+                    <div class="absolute -top-3 -right-3 bg-white p-3 rounded-xl shadow-lg z-20">
+                        <i class="fas fa-microchip text-accent text-xl"></i>
+                    </div>
+                    <img src="https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg" alt="Vikram Singh" class="relative w-64 h-80 object-cover rounded-2xl shadow-xl border-2 border-white grayscale group-hover:grayscale-0 transition-all duration-500">
+                </div>
+                <h4 class="text-2xl font-bold text-[#2a0f2a]">Vikram Singh</h4>
+                <p class="text-accent font-medium text-sm uppercase tracking-wider">RPA Solution Architect</p>
+            </div>
+
+            <div class="group text-center" data-aos="fade-up">
+                <div class="relative mb-6 inline-block">
+                    <div class="absolute inset-0 bg-[#2a0f2a] rounded-2xl -rotate-3 group-hover:-rotate-12 transition-transform duration-300"></div>
+                    <div class="absolute -top-3 -right-3 bg-white p-3 rounded-xl shadow-lg z-20">
+                        <i class="fas fa-network-wired text-[#2a0f2a] text-xl"></i>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&h=500&q=80" alt="Ananya Iyer" class="relative w-64 h-80 object-cover rounded-2xl shadow-xl border-2 border-white grayscale group-hover:grayscale-0 transition-all duration-500">
+                </div>
+                <h4 class="text-2xl font-bold text-[#2a0f2a]">Ananya Iyer</h4>
+                <p class="text-accent font-medium text-sm uppercase tracking-wider">Process Consultant</p>
+            </div>
+        </div>
+
+      
+    </div>
+</section>
+
+<style>
+    /* Custom hover effect for images: transition from grayscale to color */
+    .group:hover img {
+        filter: grayscale(0%);
+    }
+    
+    @keyframes pulse-soft {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+    }
+    
+    /* Animation for the "Join Our Team" button */
+    #team .shadow-lg:hover {
+        animation: pulse-soft 2s infinite ease-in-out;
+    }
+</style>
     <!-- Solutions Section -->
    <section id="services" class="py-32 px-6 bg-[#2a0f2a] text-white overflow-hidden relative" style="background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; background-attachment: fixed;">
     <div class="absolute inset-0 bg-[#2a0f2a]/90"></div>
@@ -496,13 +608,25 @@ body {
 
 <div id="solutionModal" class="fixed inset-0 z-[9999] hidden flex items-center justify-center px-4">
     <div class="absolute inset-0 bg-[#1a0b1a]/95 backdrop-blur-xl" onclick="closeSolution()"></div>
-    
+
     <div class="bg-white text-[#2a0f2a] rounded-[3rem] w-full max-w-5xl max-h-[85vh] overflow-y-auto relative z-10 shadow-2xl p-8 md:p-16">
         <button onclick="closeSolution()" class="absolute top-8 right-8 text-gray-400 hover:text-[#2a0f2a] transition-colors">
             <i class="fas fa-times text-2xl"></i>
         </button>
-        
+
         <div id="modalContent"></div>
+    </div>
+</div>
+
+<div id="industryModal" class="fixed inset-0 z-[9999] hidden flex items-center justify-center px-4">
+    <div class="absolute inset-0 bg-[#1a0b1a]/95 backdrop-blur-xl" onclick="closeIndustrySolution()"></div>
+
+    <div class="bg-white text-[#2a0f2a] rounded-[3rem] w-full max-w-5xl max-h-[85vh] overflow-y-auto relative z-10 shadow-2xl p-8 md:p-16">
+        <button onclick="closeIndustrySolution()" class="absolute top-8 right-8 text-gray-400 hover:text-[#2a0f2a] transition-colors">
+            <i class="fas fa-times text-2xl"></i>
+        </button>
+
+        <div id="industryModalContent"></div>
     </div>
 </div>
 
@@ -649,17 +773,136 @@ body {
                 </div>
             </div>
 
-
-
             <div class="text-center mt-16">
                 <p class="text-gray-500 text-lg mb-8">Don't see your industry? Our solutions are adaptable across all sectors.</p>
-                <a href="#get-started" class="btn-primary px-12 py-5 rounded-2xl font-extrabold text-center text-lg hover:bg-gray-50 inline-block">
+                <a href="#get-started" class="btn-primary px-12 py-5 rounded-2xl font-extrabold text-center text-lg ">
                     Discuss Your Industry Needs
                 </a>
             </div>
         </div>
     </section>
 
+    <!-- Gallery Section -->
+   <section id="gallery" class="py-32 px-6 bg-gray-100 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-20" data-aos="fade-up">
+            <h2 class="text-accent font-black uppercase tracking-[0.3em] text-xs mb-6">Our Projects</h2>
+            <h3 class="text-5xl lg:text-6xl font-extrabold text-[#2a0f2a] leading-tight tracking-tighter mb-8">Innovation in Action</h3>
+            <p class="text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed">Explore our portfolio of transformative automation projects that have revolutionized businesses across industries.</p>
+        </div>
+
+        <style>
+            @keyframes projectMarquee {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); } 
+            }
+
+            .animate-project-marquee {
+                display: flex;
+                width: max-content;
+                animation: projectMarquee 60s linear infinite; /* Increased time to 60s for 7 cards */
+            }
+
+            .animate-project-marquee:hover {
+                animation-play-state: paused;
+            }
+
+            .marquee-wrapper {
+                overflow: hidden;
+                width: 100%;
+                position: relative;
+                mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+                -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            }
+
+            .project-card {
+                flex-shrink: 0;
+                width: 320px; 
+                height: 400px;
+                position: relative;
+                overflow: hidden;
+                border-radius: 1.5rem;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+                transition: all 0.5s ease;
+            }
+            
+            .project-card:hover {
+                transform: scale(1.05);
+                z-index: 10;
+            }
+        </style>
+
+        <div class="marquee-wrapper">
+            <div class="animate-project-marquee flex gap-8">
+                
+                <div class="project-card group">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="RPA Finance" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8 text-white">
+                        <h4 class="text-2xl font-bold">Financial RPA</h4>
+                        <p class="text-sm opacity-0 group-hover:opacity-100 transition-opacity">Automated Invoice Processing</p>
+                    </div>
+                </div>
+
+                <div class="project-card group">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Manufacturing IoT" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8 text-white">
+                        <h4 class="text-2xl font-bold">Smart Factory IoT</h4>
+                        <p class="text-sm opacity-0 group-hover:opacity-100 transition-opacity">Real-time Predictive Maintenance</p>
+                    </div>
+                </div>
+
+                <div class="project-card group">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Document AI" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8 text-white">
+                        <h4 class="text-2xl font-bold">Intelligent OCR</h4>
+                        <p class="text-sm opacity-0 group-hover:opacity-100 transition-opacity">AI Document Classification</p>
+                    </div>
+                </div>
+
+                <div class="project-card group">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="ITSM" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8 text-white">
+                        <h4 class="text-2xl font-bold">ITSM Automation</h4>
+                        <p class="text-sm opacity-0 group-hover:opacity-100 transition-opacity">Self-Healing Infrastructure</p>
+                    </div>
+                </div>
+
+                <div class="project-card group">
+                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="HR" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8 text-white">
+                        <h4 class="text-2xl font-bold">HR Automation</h4>
+                        <p class="text-sm opacity-0 group-hover:opacity-100 transition-opacity">Automated Talent Management</p>
+                    </div>
+                </div>
+
+                <div class="project-card group">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Supply Chain" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8 text-white">
+                        <h4 class="text-2xl font-bold">Supply Chain RPA</h4>
+                        <p class="text-sm opacity-0 group-hover:opacity-100 transition-opacity">Real-time Inventory Sync</p>
+                    </div>
+                </div>
+
+                <div class="project-card group">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="AI Support" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8 text-white">
+                        <h4 class="text-2xl font-bold">Omnichannel AI</h4>
+                        <p class="text-sm opacity-0 group-hover:opacity-100 transition-opacity">24/7 Customer Support Bots</p>
+                    </div>
+                </div>
+
+                <div class="project-card group"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-t from-black/90 flex flex-col justify-end p-8 text-white"><h4 class="text-2xl font-bold">Financial RPA</h4></div></div>
+                <div class="project-card group"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-t from-black/90 flex flex-col justify-end p-8 text-white"><h4 class="text-2xl font-bold">Smart Factory IoT</h4></div></div>
+                <div class="project-card group"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-t from-black/90 flex flex-col justify-end p-8 text-white"><h4 class="text-2xl font-bold">Intelligent OCR</h4></div></div>
+                <div class="project-card group"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-t from-black/90 flex flex-col justify-end p-8 text-white"><h4 class="text-2xl font-bold">ITSM Automation</h4></div></div>
+                <div class="project-card group"><img src="https://gemini.google.com/share/72a455944bdb" class="w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-t from-black/90 flex flex-col justify-end p-8 text-white"><h4 class="text-2xl font-bold">HR Automation</h4></div></div>
+                <div class="project-card group"><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-t from-black/90 flex flex-col justify-end p-8 text-white"><h4 class="text-2xl font-bold">Supply Chain RPA</h4></div></div>
+                <div class="project-card group"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-t from-black/90 flex flex-col justify-end p-8 text-white"><h4 class="text-2xl font-bold">Omnichannel AI</h4></div></div>
+                
+            </div>
+        </div>
+    </div>
+</section>
     <!-- Simplified Methodology -->
     <section id="process" class="py-32 px-6 bg-white">
         <div class="max-w-4xl mx-auto text-center">
@@ -692,6 +935,86 @@ body {
         </div>
     </section>
 
+    <!-- Parallax Logo Section -->
+   <style>
+    /* 1. Define the Keyframes for the two directions */
+    @keyframes marquee-left {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+
+    @keyframes marquee-right {
+        0% { transform: translateX(-50%); }
+        100% { transform: translateX(0); }
+    }
+
+    /* 2. Apply classes with smooth linear timing */
+    .animate-marquee-right-to-left {
+        display: flex;
+        width: max-content;
+        animation: marquee-left 30s linear infinite;
+    }
+
+    .animate-marquee-left-to-right {
+        display: flex;
+        width: max-content;
+        animation: marquee-right 30s linear infinite;
+    }
+
+    /* 3. Pause on hover for better User Experience */
+    .animate-marquee-right-to-left:hover,
+    .animate-marquee-left-to-right:hover {
+        animation-play-state: paused;
+    }
+
+    /* 4. Ensure images don't stretch and look uniform */
+    .logo-img {
+        width: 120px;
+        height: 60px;
+        object-fit: contain;
+        margin: 0 40px;
+        filter: grayscale(100%);
+        opacity: 0.6;
+        transition: all 0.3s ease;
+    }
+
+    .logo-img:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+        transform: scale(1.1);
+    }
+</style>
+
+<section class="py-20 bg-royalwhite -50 overflow-hidden relative">
+    <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-[#2a0f2a]">Our Automation Partners</h2>
+    </div>
+
+    <div class="animate-marquee-right-to-left">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/512px-Microsoft_logo.svg.png" class="logo-img" alt="Microsoft">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/512px-IBM_logo.svg.png" class="logo-img" alt="IBM">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/512px-Google_2015_logo.svg.png" class="logo-img" alt="Google">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/SAP_2011_logo.svg/512px-SAP_2011_logo.svg.png" class="logo-img" alt="SAP">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Oracle_logo.svg/512px-Oracle_logo.svg.png" class="logo-img" alt="Oracle">
+    <img src="https://thumbs.dreamstime.com/b/smart-home-creative-symbol-technology-concept-safety-automation-building-system-abstract-business-construction-logo-digital-137071770.jpg" class="logo-img" alt="Smart Home">
+    <img src="https://www.wipro.com/content/dam/nexus/en/brand/images/secondary-logo-400x276.png" class="logo-img" alt="Wipro">
+    <img src="https://download.logo.wine/logo/CGI_Inc./CGI_Inc.-Logo.wine.png" class="logo-img" alt="CGI">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/LTI_Lets_solve.png" class="logo-img" alt="Let's solve">
+</div>
+
+<div class="animate-marquee-left-to-right mt-12">
+    <img src="https://seekvectors.com/files/download/Workday-01.png" class="logo-img" alt="Workday">
+    <img src="https://i.pinimg.com/736x/8a/1d/0d/8a1d0dfc30186de9e6b2ae0bdea574c6.jpg" class="logo-img" alt="ServiceNow">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/512px-Salesforce.com_logo.svg.png" class="logo-img" alt="Salesforce">
+    <img src="https://images.seeklogo.com/logo-png/34/2/automation-anywhere-logo-png_seeklogo-347692.png" class="logo-img" alt="Automation Anywhere">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOKp-03nMpIuw0t3VQ_584i0VgqyAG2I4YiA&s" class="logo-img" alt="Blue Prism">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/512px-Amazon_Web_Services_Logo.svg.png" class="logo-img" alt="AWS">
+    <img src="https://thumbs.dreamstime.com/b/ai-tech-automation-logo-featuring-stylized-letters-blue-circuit-pattern-left-green-vertical-design-right-414495176.jpg" class="logo-img" alt="AI Tech Automation">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Accenture.svg/512px-Accenture.svg.png" class="logo-img" alt="Accenture">
+    <img src="https://1000logos.net/wp-content/uploads/2020/08/Atos-Logo.png" class="logo-img" alt="Atos">
+    <img src="https://www.coforge.com/hubfs/Branding-Kit/Coforge-logo-Coral-Blue.png" class="logo-img" alt="Coforge">
+</div>
+</section>
     <!-- High-Conversion Strategy Section -->
     <section id="get-started" class="py-32 px-6 bg-white">
         <div class="max-w-6xl mx-auto bg-[#2a0f2a] rounded-[4rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(42,15,42,0.4)] flex flex-col lg:flex-row relative">
@@ -773,6 +1096,7 @@ body {
                     <div class="flex flex-col space-y-2">
                         <a href="#home" class="text-gray-600 hover:text-[#2a0f2a] transition-colors text-sm">Home</a>
                         <a href="#why-us" class="text-gray-600 hover:text-[#2a0f2a] transition-colors text-sm">Advantages</a>
+                        <a href="#team" class="text-gray-600 hover:text-[#2a0f2a] transition-colors text-sm">Our Team</a>
                         <a href="#services" class="text-gray-600 hover:text-[#2a0f2a] transition-colors text-sm">Solutions</a>
                         <a href="#industries" class="text-gray-600 hover:text-[#2a0f2a] transition-colors text-sm">Industries</a>
                         <a href="#process" class="text-gray-600 hover:text-[#2a0f2a] transition-colors text-sm">Methodology</a>
@@ -1078,15 +1402,70 @@ body {
             document.body.style.overflow = 'auto';
         }
 
-        function openIndustryModal(industry) {
-            const modal = document.getElementById(industry + 'Modal');
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
+        function openIndustryModal(key) {
+            const data = industryData[key];
+            const container = document.getElementById('industryModalContent');
+
+            container.innerHTML = `
+                <div class="text-center md:text-left mb-10">
+                    <img src="${data.image}" alt="${data.title}" class="w-full h-64 object-cover rounded-2xl mb-6">
+                    <h2 class="text-5xl font-black mb-6">${data.title}</h2>
+                    <p class="text-xl text-gray-600 leading-relaxed max-w-3xl">${data.whyUse}</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="space-y-8">
+                        <div>
+                            <h4 class="text-xl font-bold mb-4 flex items-center gap-3">
+                                <i class="fas fa-check-circle text-green-500"></i> Strategic Benefits
+                            </h4>
+                            <ul class="space-y-2 text-gray-500">
+                                ${data.benefits.map(b => `<li>• ${b}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-4 flex items-center gap-3">
+                                <i class="fas fa-plus-circle text-blue-500"></i> Key Solutions
+                            </h4>
+                            <ul class="space-y-2 text-gray-500">
+                                ${data.solutions.map(s => `<li>• ${s.name}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-8 rounded-[2rem]">
+                        <h4 class="text-xl font-bold mb-4">Trade-offs & Logic</h4>
+                        <p class="text-sm text-gray-500 mb-6">Every industry solution has specific requirements for optimal performance:</p>
+                        <ul class="space-y-4">
+                            ${data.disadvantages.map(d => `
+                                <li class="flex items-start gap-3 text-sm text-gray-600 font-medium">
+                                    <i class="fas fa-exclamation-triangle text-orange-400 mt-1"></i>
+                                    <span>${d}</span>
+                                </li>
+                            `).join('')}
+                        </ul>
+                        <div class="mt-8 p-6 bg-[#2a0f2a] rounded-2xl text-white">
+                            <p class="font-bold">Consult an Architect</p>
+                            <p class="text-xs opacity-70 mb-4">Discuss your specific industry needs today.</p>
+                            <a href="#get-started" onclick="closeIndustrySolution()" class="text-[#b486b4] font-black hover:underline">Book Session →</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Remove 'hidden' class to show modal
+            document.getElementById('industryModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Stop scrolling
         }
 
         function closeIndustryModal(industry) {
             const modal = document.getElementById(industry + 'Modal');
             modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function closeIndustrySolution() {
+            document.getElementById('industryModal').classList.add('hidden');
             document.body.style.overflow = 'auto';
         }
 
@@ -1096,6 +1475,13 @@ body {
         const industryData = {
             healthcare: {
                 title: "Healthcare Industry Solutions",
+                image: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                benefits: [
+                    "Reduced administrative burden by 70%",
+                    "Improved patient satisfaction scores",
+                    "Enhanced data security and compliance",
+                    "Cost savings through operational efficiency"
+                ],
                 solutions: [
                     {
                         name: "Patient Care Automation",
@@ -1113,10 +1499,24 @@ body {
                         name: "Regulatory Compliance",
                         description: "Automated compliance monitoring and reporting for healthcare regulations, ensuring your organization stays ahead of changing requirements."
                     }
+                ],
+                whyUse: "Healthcare organizations face increasing pressure to reduce costs while improving patient care. Automation enables medical staff to focus on patient care rather than administrative tasks, reduces errors in medical records, and ensures compliance with stringent regulations.",
+                disadvantages: [
+                    "High initial implementation costs",
+                    "Staff training requirements",
+                    "Integration with legacy systems can be complex",
+                    "Data privacy concerns must be carefully managed"
                 ]
             },
             finance: {
                 title: "Finance Industry Solutions",
+                image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                benefits: [
+                    "99.9% transaction processing accuracy",
+                    "Real-time fraud detection and prevention",
+                    "Reduced operational costs by 40%",
+                    "Enhanced regulatory compliance"
+                ],
                 solutions: [
                     {
                         name: "Transaction Processing",
@@ -1134,10 +1534,24 @@ body {
                         name: "Customer Onboarding",
                         description: "Streamlined KYC processes and automated account setup with document verification and compliance workflows."
                     }
+                ],
+                whyUse: "Financial institutions handle massive volumes of transactions daily with zero tolerance for errors. Automation ensures accuracy, security, and compliance while enabling faster service delivery and better customer experiences.",
+                disadvantages: [
+                    "Complex regulatory environment requires constant updates",
+                    "High security standards increase implementation costs",
+                    "Integration with multiple banking systems",
+                    "Potential job displacement concerns"
                 ]
             },
             manufacturing: {
                 title: "Manufacturing Industry Solutions",
+                image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                benefits: [
+                    "30% increase in production efficiency",
+                    "Reduced downtime through predictive maintenance",
+                    "Improved product quality and consistency",
+                    "Real-time production monitoring and control"
+                ],
                 solutions: [
                     {
                         name: "Production Optimization",
@@ -1155,10 +1569,24 @@ body {
                         name: "Supply Chain Integration",
                         description: "End-to-end supply chain automation from procurement to delivery with real-time inventory management."
                     }
+                ],
+                whyUse: "Manufacturing operations require precision, speed, and reliability. Automation reduces human error, optimizes resource utilization, and enables manufacturers to respond quickly to market demands.",
+                disadvantages: [
+                    "Significant upfront investment in IoT sensors",
+                    "Complex integration with existing machinery",
+                    "Requires skilled technical staff for maintenance",
+                    "Potential cybersecurity risks with connected systems"
                 ]
             },
             retail: {
                 title: "Retail Industry Solutions",
+                image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                benefits: [
+                    "50% reduction in inventory carrying costs",
+                    "Personalized customer experiences",
+                    "Faster checkout processes",
+                    "Real-time sales and inventory insights"
+                ],
                 solutions: [
                     {
                         name: "Inventory Management",
@@ -1176,10 +1604,24 @@ body {
                         name: "Loyalty Programs",
                         description: "Automated customer loyalty programs with personalized offers and rewards based on purchase behavior."
                     }
+                ],
+                whyUse: "Retailers face intense competition and changing consumer expectations. Automation enables personalized experiences, efficient operations, and data-driven decision making to stay competitive.",
+                disadvantages: [
+                    "High competition from established automation providers",
+                    "Integration with existing POS systems can be challenging",
+                    "Customer data privacy concerns",
+                    "Seasonal demand fluctuations affect ROI"
                 ]
             },
             logistics: {
                 title: "Logistics Industry Solutions",
+                image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                benefits: [
+                    "25% reduction in delivery times",
+                    "Real-time shipment visibility",
+                    "Optimized route planning and fuel efficiency",
+                    "Automated warehouse operations"
+                ],
                 solutions: [
                     {
                         name: "Route Optimization",
@@ -1197,10 +1639,24 @@ body {
                         name: "Supply Chain Visibility",
                         description: "End-to-end supply chain visibility with automated reporting and performance analytics."
                     }
+                ],
+                whyUse: "Logistics companies operate in a fast-paced environment where delays and errors are costly. Automation ensures reliable, efficient, and transparent supply chain operations.",
+                disadvantages: [
+                    "High infrastructure costs for GPS and IoT implementation",
+                    "Dependency on reliable internet connectivity",
+                    "Complex international shipping regulations",
+                    "Weather and external factors can impact automated systems"
                 ]
             },
             professional: {
                 title: "Professional Services Solutions",
+                image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                benefits: [
+                    "60% faster client onboarding",
+                    "Improved document processing accuracy",
+                    "Enhanced project tracking and billing",
+                    "Better compliance management"
+                ],
                 solutions: [
                     {
                         name: "Client Onboarding",
@@ -1218,6 +1674,13 @@ body {
                         name: "Compliance Management",
                         description: "Automated compliance monitoring and reporting for professional standards and regulatory requirements."
                     }
+                ],
+                whyUse: "Professional services firms deal with complex documentation and compliance requirements. Automation streamlines administrative tasks, improves accuracy, and enables professionals to focus on client work.",
+                disadvantages: [
+                    "Resistance to change from traditional work practices",
+                    "Integration with existing case management systems",
+                    "Data security concerns with sensitive client information",
+                    "Learning curve for adopting new automated workflows"
                 ]
             }
         };
@@ -1228,17 +1691,48 @@ body {
             const detailsBox = document.getElementById('industryDetailsBox');
 
             container.innerHTML = `
-                <h3 class="text-4xl font-bold mb-8">${data.title}</h3>
-                <div class="grid md:grid-cols-2 gap-8">
-                    ${data.solutions.map(solution => `
-                        <div class="bg-white/10 rounded-2xl p-6">
-                            <h4 class="text-xl font-bold mb-3">${solution.name}</h4>
-                            <p class="text-white/80 leading-relaxed">${solution.description}</p>
-                        </div>
-                    `).join('')}
+                <div class="text-center mb-8">
+                    <img src="${data.image}" alt="${data.title}" class="w-full h-64 object-cover rounded-2xl mb-6">
+                    <h3 class="text-4xl font-bold mb-4">${data.title}</h3>
+                    <p class="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">${data.whyUse}</p>
                 </div>
-                <div class="mt-8 text-center">
-                    <a href="#get-started" class="inline-block bg-white text-[#2a0f2a] px-8 py-4 rounded-2xl font-bold hover:bg-gray-100 transition-colors">
+
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <h4 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                            <i class="fas fa-chart-line text-green-500"></i> Key Benefits
+                        </h4>
+                        <ul class="space-y-3">
+                            ${data.benefits.map(benefit => `<li class="flex items-start gap-3"><i class="fas fa-check-circle text-green-500 mt-1"></i><span class="text-gray-700">${benefit}</span></li>`).join('')}
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                            <i class="fas fa-tools text-blue-500"></i> Solutions Offered
+                        </h4>
+                        <div class="space-y-4">
+                            ${data.solutions.map(solution => `
+                                <div class="bg-gray-50 rounded-xl p-4">
+                                    <h5 class="font-bold text-lg mb-2">${solution.name}</h5>
+                                    <p class="text-gray-600 text-sm leading-relaxed">${solution.description}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-red-50 rounded-2xl p-6 mb-8">
+                    <h4 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                        <i class="fas fa-exclamation-triangle text-orange-500"></i> Important Considerations
+                    </h4>
+                    <ul class="space-y-2">
+                        ${data.disadvantages.map(disadvantage => `<li class="flex items-start gap-3 text-sm text-gray-700"><i class="fas fa-info-circle text-orange-500 mt-1"></i><span>${disadvantage}</span></li>`).join('')}
+                    </ul>
+                </div>
+
+                <div class="text-center">
+                    <a href="#get-started" class="inline-block bg-[#2a0f2a] text-white px-8 py-4 rounded-2xl font-bold hover:bg-[#421942] transition-colors">
                         Discuss ${data.title.split(' ')[0]} Solutions
                     </a>
                 </div>
@@ -1254,6 +1748,23 @@ body {
         function closeIndustryDetails() {
             document.getElementById('industryDetailsBox').classList.add('hidden');
         }
+
+        // Parallax Gallery Effect
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const parallaxItems = document.querySelectorAll('.parallax-item');
+
+            parallaxItems.forEach(item => {
+                const speed = parseFloat(item.getAttribute('data-speed'));
+                const yPos = -(scrolled * speed);
+                item.style.transform = `translateY(${yPos}px)`;
+            });
+        }
+
+        // Initialize parallax on load
+        window.addEventListener('load', updateParallax);
+        window.addEventListener('scroll', updateParallax);
+
     </script>
 </body>
 </html>

@@ -1,6 +1,10 @@
-# TODO: Remove Service Section from index.html
+# TODO: Add Projects Section with Parallax and Drag - REVERTED
 
-- [ ] Remove the Solutions Section (id="services")
-- [ ] Remove the solutionModal div
-- [ ] Remove JavaScript for solutions (solutionDetails, openSolution, closeSolution)
-- [ ] Remove navigation links to #services
+## Tasks
+- [x] Add new projects section HTML between industries and process sections
+- [x] Implement parallax scrolling CSS for images
+- [x] Add drag functionality JavaScript
+- [x] Style section to match site theme
+- [x] Test parallax and drag interactions
+- [x] Ensure mobile responsiveness
+- [x] Revert all changes - remove projects section, CSS, JS, and navigation links
