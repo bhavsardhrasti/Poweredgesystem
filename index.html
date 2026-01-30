@@ -321,7 +321,7 @@ body {
                     <a href="#industries" class="nav-link">Industries</a>
                     <a href="#gallery" class="nav-link">Projects </a>
                     <a href="#process" class="nav-link">Methodology</a>
-                    <a href="#get-started" class="bg-white text-[#2a0f2a] px-8 py-3 rounded-full font-bold shadow-2xl hover:scale-105 transition-all">Consult Our Experts</a>
+                    <a href="#get-started" id="consultBtn" class="bg-white text-[#2a0f2a] px-8 py-3 rounded-full font-bold shadow-2xl hover:scale-105 transition-all">Consult Our Experts</a>
                 </div>
 
                 <button class="lg:hidden text-white" onclick="toggleMobileMenu()">
@@ -1352,28 +1352,87 @@ body {
             easing: 'ease-out-quad'
         });
 
-        // Navbar Scroll Evolution
-        window.addEventListener('scroll', function() {
+        // Navbar Scroll Evolution - Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
             const nav = document.getElementById('mainNav');
             const logoText = document.getElementById('logoText');
             const navLinks = document.getElementById('navLinks');
             const logoIcon = document.getElementById('logoIcon');
             const menuIcon = document.getElementById('menuIcon');
-            
-            if (window.scrollY > 80) {
-                nav.classList.add('bg-white', 'shadow-[0_20px_50px_rgba(0,0,0,0.05)]', 'py-4');
-                nav.classList.remove('py-6');
-                logoText.classList.replace('text-white', 'text-[#2a0f2a]');
-                navLinks.classList.replace('text-white', 'text-[#2a0f2a]');
-                logoIcon.classList.replace('bg-white', 'bg-[#2a0f2a]');
-                menuIcon.classList.replace('text-white', 'text-[#2a0f2a]');
-            } else {
-                nav.classList.remove('bg-white', 'shadow-[0_20px_50px_rgba(0,0,0,0.05)]', 'py-4');
-                nav.classList.add('py-6');
-                logoText.classList.replace('text-[#2a0f2a]', 'text-white');
-                navLinks.classList.replace('text-[#2a0f2a]', 'text-white');
-                menuIcon.classList.replace('text-[#2a0f2a]', 'text-white');
+            const consultBtn = document.getElementById('consultBtn');
+            const heroSection = document.getElementById('home');
+            const whyUsSection = document.getElementById('why-us');
+            const servicesSection = document.getElementById('services');
+            const industriesSection = document.getElementById('industries');
+            const gallerySection = document.getElementById('gallery');
+            const processSection = document.getElementById('process');
+
+            // Function to update navbar and button styles
+            function updateNavbarStyles() {
+                if (window.scrollY > 80) {
+                    nav.classList.add('bg-white', 'shadow-[0_20px_50px_rgba(0,0,0,0.05)]', 'py-4');
+                    nav.classList.remove('py-6');
+                    logoText.classList.remove('text-white');
+                    logoText.classList.add('text-[#2a0f2a]');
+                    navLinks.classList.remove('text-white');
+                    navLinks.classList.add('text-[#2a0f2a]');
+                    if (logoIcon) {
+                        logoIcon.classList.remove('bg-white');
+                        logoIcon.classList.add('bg-[#2a0f2a]');
+                    }
+                    menuIcon.classList.remove('text-white');
+                    menuIcon.classList.add('text-[#2a0f2a]');
+                } else {
+                    nav.classList.remove('bg-white', 'shadow-[0_20px_50px_rgba(0,0,0,0.05)]', 'py-4');
+                    nav.classList.add('py-6');
+                    logoText.classList.remove('text-[#2a0f2a]');
+                    logoText.classList.add('text-white');
+                    navLinks.classList.remove('text-[#2a0f2a]');
+                    navLinks.classList.add('text-white');
+                    menuIcon.classList.remove('text-[#2a0f2a]');
+                    menuIcon.classList.add('text-white');
+                }
+
+                // Button color change based on which section is currently in view
+                const scrollPosition = window.scrollY + 100; // Offset for better trigger point
+                const heroTop = heroSection.offsetTop;
+                const whyUsTop = whyUsSection.offsetTop;
+                const servicesTop = servicesSection.offsetTop;
+                const industriesTop = industriesSection.offsetTop;
+                const galleryTop = gallerySection.offsetTop;
+                const processTop = processSection.offsetTop;
+
+                // Determine which section is currently in view
+                let currentSection = 'hero';
+                if (scrollPosition >= processTop) {
+                    currentSection = 'process';
+                } else if (scrollPosition >= galleryTop) {
+                    currentSection = 'gallery';
+                } else if (scrollPosition >= industriesTop) {
+                    currentSection = 'industries';
+                } else if (scrollPosition >= servicesTop) {
+                    currentSection = 'services';
+                } else if (scrollPosition >= whyUsTop) {
+                    currentSection = 'why-us';
+                }
+
+                // Apply button color based on current section
+                if (currentSection === 'hero' || currentSection === 'services') {
+                    // Hero and Services sections - white button
+                    consultBtn.classList.remove('bg-[#2a0f2a]', 'text-white');
+                    consultBtn.classList.add('bg-white', 'text-[#2a0f2a]');
+                } else {
+                    // Why Us, Industries, Gallery, Process sections - purple button
+                    consultBtn.classList.remove('bg-white', 'text-[#2a0f2a]');
+                    consultBtn.classList.add('bg-[#2a0f2a]', 'text-white');
+                }
             }
+
+            // Add scroll event listener
+            window.addEventListener('scroll', updateNavbarStyles);
+            
+            // Call once on load to set initial state
+            updateNavbarStyles();
         });
 
         function handleConsult(event) {
