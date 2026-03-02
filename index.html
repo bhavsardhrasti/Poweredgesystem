@@ -296,7 +296,38 @@ body {
             transition: transform 0.3s ease;
         }
 
-        /* Mobile Responsive Styles */
+        /* Responsive Design - Comprehensive */
+        @media (max-width: 1280px) {
+            h1.text-7xl {
+                font-size: 3.5rem !important;
+            }
+            
+            .hero-title {
+                font-size: 3.5rem !important;
+            }
+        }
+
+        /* Tablet Landscape */
+        @media (max-width: 1024px) {
+            h1.text-7xl {
+                font-size: 3rem !important;
+            }
+            
+            .hero-title {
+                font-size: 3rem !important;
+            }
+            
+            .text-5xl {
+                font-size: 2.5rem !important;
+            }
+            
+            .py-32 {
+                padding-top: 4rem !important;
+                padding-bottom: 4rem !important;
+            }
+        }
+
+        /* Tablet Portrait */
         @media (max-width: 768px) {
             /* Hero Section - Mobile */
             .hero-title {
@@ -427,6 +458,126 @@ body {
                 padding: 0.75rem 0 !important;
                 font-size: 1rem !important;
             }
+            
+            /* Hero section mobile adjustments */
+            .hero-gradient {
+                min-height: auto !important;
+                padding-top: 6rem !important;
+                padding-bottom: 3rem !important;
+            }
+            
+            /* Hero content adjustments */
+            .hero-gradient .grid {
+                gap: 2rem !important;
+            }
+            
+            /* Trusted globally section */
+            .flex-col.sm\:flex-row {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 1rem !important;
+            }
+            
+            /* Stat cards positioning */
+            .stat-card {
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                transform: none !important;
+                margin: 1rem 0 !important;
+            }
+            
+            /* Hide decorative elements on mobile */
+            .floating-element {
+                display: none !important;
+            }
+            
+            .bg-glow {
+                display: none !important;
+            }
+            
+            /* Nav padding adjustment */
+            nav.py-6 {
+                padding: 1rem !important;
+            }
+            
+            /* Logo text on mobile */
+            #logoText {
+                font-size: 1rem !important;
+            }
+            
+            /* Form grid to single column */
+            #consultForm .grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            /* Team grid */
+            .grid-cols-1.md\:grid-cols-2.lg\:grid-cols-4 {
+                grid-template-columns: 1fr !important;
+            }
+            
+            /* Services grid */
+            #services .grid-cols-1.md\:grid-cols-2 {
+                grid-template-columns: 1fr !important;
+            }
+            
+            /* Why us section */
+            #why-us .flex-col.lg\:flex-row {
+                flex-direction: column !important;
+            }
+            
+            #why-us .items-end {
+                align-items: flex-start !important;
+            }
+            
+            /* Industries grid */
+            .grid-cols-1.sm\:grid-cols-2.lg\:grid-cols-3 {
+                grid-template-columns: 1fr !important;
+            }
+            
+            /* Process grid */
+            #process .grid-cols-1.md\:grid-cols-2.lg\:grid-cols-4 {
+                grid-template-columns: 1fr !important;
+            }
+            
+            /* Gallery */
+            #gallery .grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3 {
+                grid-template-columns: 1fr !important;
+            }
+            
+            /* Footer grid */
+            footer .grid-cols-1.md\:grid-cols-3 {
+                grid-template-columns: 1fr !important;
+                text-align: center !important;
+            }
+            
+            footer .flex-col {
+                align-items: center !important;
+            }
+            
+            /* Contact section */
+            #get-started .grid-cols-1.lg\:grid-cols-2 {
+                grid-template-columns: 1fr !important;
+            }
+            
+            /* Industry chips horizontal scroll */
+            .flex-wrap {
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+                padding-bottom: 0.5rem !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
+            
+            .industry-chip {
+                flex-shrink: 0 !important;
+            }
+            
+            /* Get started section padding */
+            #get-started .p-16 {
+                padding: 1.5rem !important;
+            }
         }
 
         /* Small mobile devices */
@@ -439,8 +590,20 @@ body {
                 font-size: 2rem !important;
             }
             
-            .text-5xl, .text-5xl lg\:text-6xl {
+            .text-5xl {
                 font-size: 1.75rem !important;
+            }
+            
+            .text-4xl {
+                font-size: 1.5rem !important;
+            }
+            
+            .text-3xl {
+                font-size: 1.5rem !important;
+            }
+            
+            .text-2xl {
+                font-size: 1.25rem !important;
             }
             
             .py-32 {
@@ -462,16 +625,276 @@ body {
                 height: 30px !important;
                 margin: 0 15px !important;
             }
+            
+            /* Form inputs */
+            input, textarea {
+                font-size: 16px !important;
+            }
+            
+            /* Button full width on mobile */
+            .hero-cta, .btn-primary, button[type="submit"] {
+                width: 100% !important;
+            }
+            
+            /* Team member images smaller */
+            .group img.w-64 {
+                width: 100% !important;
+                height: 250px !important;
+            }
+            
+            /* Footer copyright */
+            .flex-col.md\:flex-row {
+                flex-direction: column !important;
+                gap: 1rem !important;
+            }
+            
+            /* Step pills */
+            .step-pill {
+                width: 32px !important;
+                height: 32px !important;
+                font-size: 0.875rem !important;
+            }
+            
+            /* Chart container */
+            .chart-container {
+                padding: 1rem !important;
+            }
         }
 
-        /* Ensure laptop/desktop displays properly */
-        @media (min-width: 1024px) {
+        /* Large screens */
+        @media (min-width: 1536px) {
             h1.text-7xl {
-                font-size: 4.5rem !important;
+                font-size: 5rem !important;
             }
             
             .hero-title {
-                font-size: 4.5rem !important;
+                font-size: 5rem !important;
+            }
+        }
+
+        /* Touch device improvements */
+        @media (hover: none) and (pointer: coarse) {
+            a, button {
+                min-height: 44px;
+                min-width: 44px;
+            }
+            
+            .group:hover img {
+                filter: none !important;
+            }
+        }
+
+        /* Navigation mobile toggle */
+        @media (max-width: 1023px) {
+            .hidden.lg\:flex {
+                display: none !important;
+            }
+            
+            .lg\:hidden {
+                display: block !important;
+            }
+            
+            /* Fixed nav on mobile */
+            nav.fixed {
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                z-index: 9999 !important;
+            }
+            
+            /* Mobile menu positioning */
+            #mobileMenu {
+                position: absolute !important;
+                top: 100% !important;
+                left: 0 !important;
+                right: 0 !important;
+                z-index: 9998 !important;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .lg\:hidden {
+                display: none !important;
+            }
+        }
+
+        /* Landscape orientation mobile */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .hero-gradient {
+                min-height: auto !important;
+                padding-top: 5rem !important;
+            }
+            
+            .floating-element {
+                display: none !important;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            
+            body {
+                background: white !important;
+                color: black !important;
+            }
+            
+            .hero-gradient {
+                background: white !important;
+            }
+        }
+
+        /* Modal Responsive Styles */
+        @media (max-width: 768px) {
+            /* Solution Modal */
+            #solutionModal .bg-white.text-\[\#2a0f2a\] {
+                padding: 1.5rem !important;
+                border-radius: 1.5rem !important;
+                margin: 0.5rem !important;
+                max-height: 95vh !important;
+                overflow-y: auto !important;
+            }
+            
+            #solutionModal button.absolute.top-8.right-8 {
+                position: absolute !important;
+                top: 1rem !important;
+                right: 1rem !important;
+            }
+            
+            /* Industry Modal */
+            #industryModal .bg-white.text-\[\#2a0f2a\] {
+                padding: 1.5rem !important;
+                border-radius: 1.5rem !important;
+                margin: 0.5rem !important;
+                max-height: 95vh !important;
+                overflow-y: auto !important;
+            }
+            
+            /* All modals */
+            .fixed.inset-0.z-\[9999\] {
+                padding: 0.5rem !important;
+                align-items: flex-start !important;
+                padding-top: 2rem !important;
+            }
+            
+            /* Modal content text adjustments */
+            .modal-content h2 {
+                font-size: 1.5rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .modal-content h3 {
+                font-size: 1.25rem !important;
+            }
+            
+            .modal-content p {
+                font-size: 0.9rem !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #solutionModal .bg-white.text-\[\#2a0f2a\],
+            #industryModal .bg-white.text-\[\#2a0f2a\] {
+                padding: 1rem !important;
+                border-radius: 1rem !important;
+            }
+            
+            .fixed.inset-0.z-\[9999\] {
+                padding-top: 1rem !important;
+            }
+        }
+
+        /* Image responsive fixes */
+        @media (max-width: 768px) {
+            img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+            
+            /* Hero images */
+            .hidden.lg\:block img {
+                display: none !important;
+            }
+            
+            /* Trusted avatars */
+            .flex.-space-x-3 img {
+                width: 40px !important;
+                height: 40px !important;
+            }
+            
+            /* Team images */
+            #team .group img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+            
+            /* Logo in nav */
+            .w-12.h-12 {
+                width: 40px !important;
+                height: 40px !important;
+            }
+            
+            /* Footer logo */
+            footer .w-12.h-12 {
+                width: 40px !important;
+                height: 40px !important;
+            }
+        }
+
+        /* Form and button responsive fixes */
+        @media (max-width: 768px) {
+            /* Form inputs */
+            input[type="text"],
+            input[type="email"],
+            textarea {
+                width: 100% !important;
+                padding: 0.75rem !important;
+                font-size: 16px !important; /* Prevents iOS zoom */
+            }
+            
+            /* CTA Buttons */
+            .hero-cta {
+                width: 100% !important;
+                display: block !important;
+                text-align: center !important;
+            }
+            
+            /* Form button */
+            button[type="submit"] {
+                width: 100% !important;
+                padding: 1rem !important;
+            }
+            
+            /* Trust section */
+            .flex.items-center.gap-5.px-4 {
+                padding: 0.5rem 0 !important;
+            }
+            
+            /* Industry chips */
+            .industry-chip {
+                padding: 0.5rem 1rem !important;
+                font-size: 0.875rem !important;
+            }
+        }
+
+        /* Prevent horizontal scroll on mobile */
+        @media (max-width: 768px) {
+            html, body {
+                overflow-x: hidden !important;
+                max-width: 100vw !important;
+            }
+            
+            /* Section overflow fixes */
+            section {
+                overflow-x: hidden !important;
+            }
+            
+            /* Marquee overflow */
+            .overflow-hidden {
+                overflow-x: hidden !important;
             }
         }
 
